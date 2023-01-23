@@ -1,0 +1,37 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base"
+  ],
+  "pre-commit": {
+    "enabled": true
+  },
+  "assigneesFromCodeOwners": true,
+  "automergeType": "pr",
+  "automergeStrategy": "squash",
+  "dependencyDashboard": true,
+  "dependencyDashboardAutoclose": true,
+  "transitiveRemediation": true,
+  "schedule": [
+    "after 8pm every weekday",
+    "before 8am every weekday",
+    "every weekend"
+  ],
+  "timezone": "America/Chicago",
+  "major": {
+    "automerge": false
+  },
+  "minor": {
+    "automerge": true,
+    "groupName": "minor dependencies",
+    "groupSlug": "all-minor",
+    "stabilityDays": 1
+  },
+  "patch": {
+    "automerge": true,
+    "groupName": "patch dependencies",
+    "groupSlug": "all-patch",
+    "stabilityDays": 1
+  },
+  "labels": ["renovate"]
+}
